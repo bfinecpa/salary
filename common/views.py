@@ -24,7 +24,7 @@ from django.http import HttpResponse
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-
+from django.contrib.auth.forms import UserChangeForm
 from django.views import View
 
 
@@ -65,5 +65,7 @@ def change_password(request):
     return render(request, 'common/change_password.html', {
         'form': form
     })
+
+
 
 

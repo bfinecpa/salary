@@ -15,10 +15,14 @@ def salary(request):
     """
     if request.user.get_username()=="admin":
         return render(request, 'salary/excel.html')
+
     memo_name = request.user.get_username()
 
-    # salary = get_object_or_404( Salary, username=Salary.name)
-    salary = Salary.objects.get(employee_number=memo_name)
+    # salary = get_object_or_404( Salary, username=Salary.name)\
+    try:
+        salary = Salary.objects.get(employee_number=memo_name)
+    except:
+        return render(request, 'salary/error.html')
     # salary = Salary.objects_or_404(name=memo_name)
     # for key in list(salary.objects()):
     #     if key.value ==None: key.value =''
@@ -26,6 +30,7 @@ def salary(request):
     #     if v is None: salary[k]=''
     context = {'salary': salary, 'name': memo_name}
     return render(request, 'salary/salary.html', context)
+
 
 def excelIndex(request):
     if "GET" == request.method:
