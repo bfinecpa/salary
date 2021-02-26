@@ -28,7 +28,7 @@ SECRET_KEY = 'w4cl_tr32jv22t&*x@v$(j=h(!pyn2$tbfmkh@4-$t1l10-3*t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.36.186.107']
 
 
 # Application definition
