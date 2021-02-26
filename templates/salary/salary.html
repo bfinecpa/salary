@@ -1,0 +1,167 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <!-- pybo CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'salary.css' %}">
+    <title>급여명세서!</title>
+</head>
+<body style="margin:0;">
+{% include "navbar.html" %}
+<div class="board" >
+<div style="text-align: center; margin-bottom: 30px"><h1>{{ salary.salary_name }}분 급상여명세서 </h1></div>
+    <div class="info" ><div>사원코드: {{ salary.employee_code }}</div><div>사원명: {{ salary.name }}</div><div>입사일: {{ salary.entered_date }}</div></div>
+    <div class="info"><div>부서: {{ salary.department }}</div><div>직급: {{ salary.rank }}</div><div>호봉: {{ salary.salary_step }}</div></div>
+
+    <table  >
+
+  <thead>
+    <tr style="font-size: 20px">
+      <th class="sol" scope="col">지급내역</th>
+      <th class="coll" scope="col">지급액</th>
+      <th class="sol" scope="col">공제내역</th>
+      <th class="col" scope="col">공제액</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr>
+      <td >기본급</td>
+      <td>{{ salary.normal }}</td>
+      <td>국민연금</td>
+      <td>{{ salary.national_pension }}</td>
+
+    </tr>
+    <tr>
+      <td>명절지원금</td>
+      <td>{{ salary.holiday_subsidy}}</td>
+      <td>건강보험</td>
+      <td>{{ salary.health_insurance_premium}}</td>
+    </tr>
+
+  <tr>
+      <td>성과급</td>
+      <td>{{ salary.incentive}}</td>
+      <td>고용보험</td>
+      <td>{{ salary.employment_insurance }}</td>
+    </tr>
+    <tr>
+      <td>기타급여정산분</td>
+      <td>{{ salary.other_salary_settlement }}</td>
+      <td>장기요양보험료</td>
+      <td>{{ salary.long_term_care_premium }}</td>
+    </tr>
+
+   <tr>
+      <td>자녀학자금지원</td>
+      <td>{{ salary.school_expenses }}</td>
+      <td>소득세</td>
+      <td>{{ salary.income_tax }}</td>
+    </tr>
+
+   <tr>
+       <td>면허수당</td>
+      <td>{{ salary.license_allowance }}</td>
+      <td>지방소득세
+      </td>
+      <td>{{ salary.local_income_tax }}</td>
+    </tr>
+
+   <tr>
+      <td>시간외수당</td>
+      <td>{{ salary.overtime_allowance }}</td>
+      <td>연말정산소득세</td>
+      <td>{{ salary.Year_end_settlement_income_tax}}</td>
+    </tr>
+   <tr>
+      <td>당직수당</td>
+      <td>{{ salary.duty_allowance }}</td>
+      <td>연말정산지방소득세</td>
+      <td>{{ salary.local_income_tax_for_year_end_settlement }}</td>
+    </tr>
+
+    <tr>
+      <td>연차수당</td>
+      <td>{{ salary.annual_allowance }}</td>
+      <td>연말정산농특세</td>
+      <td>{{ salary.year_and_settlement_agricultural_special_tax}}</td>
+    </tr>
+    <tr>
+      <td>장기근속/포상금</td>
+      <td>{{ salary.long_term_reward }}</td>
+      <td>사우회비</td>
+      <td>{{ salary.membership_fee }}</td>
+    </tr>
+    <tr>
+      <td>기타수당</td>
+      <td>{{ salary.other_allowance }}</td>
+      <td>주택자금상환</td>
+      <td>{{ salary.repayment_of_hosing_funds }}</td>
+    </tr>
+    <tr>
+      <td>기타 1</td>
+      <td></td>
+      <td>기타 1</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>산전휴가/육아휴직</td>
+      <td>{{ salary.maternity_leave }}</td>
+      <td>기타 2</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>식대</td>
+      <td>{{ salary.meals }}</td>
+      <td>건강보험료정산</td>
+      <td>{{ salary.health_insurance_premium_settlement }}</td>
+    </tr>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>장기요양보험정산</td>
+      <td>{{ salary.long_term_care_premium_settlement }}</td>
+    </tr>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+  <tr style="font-size: 20px">
+      <td></td>
+      <td></td>
+      <th>공제액계</th>
+      <td>{{ salary.total_deduction }}</td>
+    </tr>
+
+  <tr style="font-size: 20px">
+      <th>지급액계</th>
+      <td>{{ salary.total_payment }}</td>
+      <th>차인지급액</th>
+      <td>{{ salary.actual_payment}}</td>
+    </tr>
+  <tr style="border: none">
+      <td>※  귀하의 노고에 감사드립니다</td>
+      <td></td>
+      <th></th>
+      <td style="text-align: right">(주)바커케미칼코리아
+</td>
+    </tr>
+  </tbody>
+    </table>
+</div>
+<!-- jQuery JS -->
+<script src="{% static 'jquery-3.5.1.min.js' %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'bootstrap.min.js' %}"></script>
+</body>
+</html>

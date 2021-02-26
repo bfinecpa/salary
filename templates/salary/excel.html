@@ -1,0 +1,44 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <!-- pybo CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'exc.css' %}">
+    <title>급여명세서!</title>
+</head>
+<body style="margin:0;">
+{% include "navbar.html" %}
+
+<form class="filebox" action="{% url "salary:excel" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+    <div class="instruction"> <h1><strong>Excel 급여보고 파일 업로드 메뉴얼</strong></h1> 엑셀 파일 선택 ->업로드 <br> * 엑셀 파일 sheet 이름을 급여보고 할 것 </div>
+           <div> <input class="upload-name" value="파일선택" disabled="disabled">
+
+            <label for="ex_filename">파일선택</label>
+            <input type="file"
+                   id="ex_filename" class="upload-hidden"
+                   title="Upload excel file"
+                   name="excel_file"
+                   required="required">
+
+
+            <label for="ex_submit" class="submit">업로드</label>
+            <input type="submit"
+                   id="ex_submit" class="upload-hidden"
+                   value="Upload">
+               </div>
+        </form>
+
+<!-- jQuery JS -->
+<script src="{% static 'jquery-3.5.1.min.js' %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'bootstrap.min.js' %}"></script>
+<script src="{% static 'excel.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+.board{
+    width: 1000px; margin:50px auto;
+    height: 800px;
+
+}
+table{
+    width:100%
+}
+
+.info{
+    display: flex;
+    margin-bottom: 10px;
+
+}
+.info div{
+    width: 25%;
+    font-size: 18px;
+}
+span{
+    width :50px;
+
+}
+
+td { padding: 6px 6px}
+
+tbody{
+    font-size: 15px;
+
+}
+tbody td, tbody th , tr{
+    height:  auto;
+
+}
+td , th{
+    padding:0px;
+}
+tr {
+    height: 30px;
+    border-bottom: 1px solid #ECECEC;
+}
+thead{
+    border-bottom: 2px solid #ECECEC;
+}
+tr:hover{
+    background-color: #ECECEC;
+}
+.col {
+    width:15%;
+    padding:0px;
+}
+.sol{
+    width:35%;
+    padding:0px;
+}
