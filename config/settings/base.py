@@ -31,7 +31,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['3.36.186.107']
 
 
-# Application definition
+# Application definition 123
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -137,9 +137,9 @@ EMAIL_HOST = 'smtp.gmail.com'
 # 메일을 호스트하는 서버
 EMAIL_PORT = '587'
 # gmail과의 통신하는 포트
-EMAIL_HOST_USER = 'bfinecpa@gmail.com'
+EMAIL_HOST_USER = 'keumky3@gmail.com'
 # 발신할 이메일
-EMAIL_HOST_PASSWORD = 'agsimcpa7$'
+EMAIL_HOST_PASSWORD = '0504okok!!'
 # 발신할 메일의 비밀번호
 EMAIL_USE_TLS = True
 # TLS 보안 방법
